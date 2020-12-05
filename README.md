@@ -1,2 +1,3 @@
-# advent_code_2020
-My attempts at the Advent of Code, 2020 version
+# Advent of Code 2020
+
+See https://adventofcode.com/2020 for more information.
