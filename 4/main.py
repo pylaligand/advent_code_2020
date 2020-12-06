@@ -89,8 +89,6 @@ def main():
         if not lines:
             break
 
-    print(passports)
-
     if not args.next:
         n_valid = sum(1 for p in passports if p.is_valid())
     else:
