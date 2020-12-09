@@ -14,7 +14,7 @@ def binary_search(sequence, size, start):
             bounds = (min + delta, max)
     min, max = bounds
     if min != max:
-        raise 'Could not find spot: %s / %s' % (sequence, size)
+        raise Exception('Could not find spot: %s / %s' % (sequence, size))
     return min
 
 

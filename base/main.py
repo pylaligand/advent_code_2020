@@ -13,9 +13,9 @@ def main():
         lines = [l.strip() for l in input_file.readlines()]
 
     if args.next:
-        raise 'not implemented!'
+        raise Exception('not implemented!')
     else:
-        raise 'not implemented!'
+        raise Exception('not implemented!')
 
 
 if __name__ == "__main__":

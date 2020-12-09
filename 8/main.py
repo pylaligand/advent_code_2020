@@ -30,7 +30,7 @@ class Instruction(object):
     @contextmanager
     def flip(self):
         if not self.can_flip():
-            raise 'Cannot flip %s' % self
+            raise Exception('Cannot flip %s' % self)
         try:
             self.type = Type.Jump if self.type == Type.Noop else Type.Noop
             yield
@@ -64,7 +64,7 @@ def run(instructions):
         if index == len(instructions):
             return (False, accumulator)
         if index < 0 or index > len(instructions):
-            raise 'Reached invalid instruction index: %d' % index
+            raise Exception('Reached invalid instruction index: %d' % index)
 
 
 def find_fix(instructions):
@@ -75,7 +75,7 @@ def find_fix(instructions):
             is_loop, accumulator = run(instructions)
             if not is_loop:
                 return accumulator
-    raise 'Could not find terminating program!'
+    raise Exception('Could not find terminating program!')
 
 
 def main():
@@ -94,7 +94,7 @@ def main():
     else:
         reached_loop, accumulator = run(instructions)
         if not reached_loop:
-            raise 'Did not detect a loop :('
+            raise Exception('Did not detect a loop :(')
         print(accumulator)
 
 

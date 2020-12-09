@@ -12,7 +12,7 @@ def parse_entry(raw_entry):
     pattern = '(\d+)-(\d+) (\w): (\w+)'
     match = re.match(pattern, raw_entry)
     if not match:
-        raise 'Could not parse: ' + entry
+        raise Exception('Could not parse: ' + entry)
     return Entry(ref_one=int(match.group(1)),
                  ref_two=int(match.group(2)),
                  char=match.group(3),
